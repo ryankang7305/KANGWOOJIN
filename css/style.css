@@ -1,0 +1,292 @@
+@charset "UTF-8";
+
+@import url(reset.css);
+@import url(font.css);
+
+.num {position: fixed; top: 0; left: 0; font-size: 50px; border: 1px solid #000; width: 100px;height: 100px; z-index: 7; display: flex; justify-content: center; align-items: center;}
+
+body {background: #000 url('../images/space1.jpg'); height: 3000px; width: 1920px; overflow-x: hidden;}
+.subj {font-family: 'PyeongChangPeace-Light';}
+#wrap .space {position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    animation: spin 140s linear infinite;
+    background-size: 340px;
+    background-image: url('../images/space.svg');}
+@keyframes spin {
+    0% {transform: translate(-50%,-50%) rotate(0deg);}
+    100% {transform: translate(-50%,-50%) rotate(360deg);}
+}
+
+.centerbox1600 {max-width: 1600px; margin: 0 auto}
+.centerbox1500 {max-width: 1500px; margin: 0 auto}
+
+#section1 {width: 100%; height: 100vh; position: relative;}
+#section1:before {content: ""; position: absolute; width: 100%; height: 140px; background: #fff; bottom: 0;}
+#section1:after {content: ""; position: absolute; width: 1243px; height: 540px; left: 0; bottom: 0; background: url('../images/hill1.png'); cursor: pointer;}
+
+#section1 .tv_box {width: 850px; height: 950px; position: absolute; left: 50%; margin-left: -1000px; bottom: 0;}
+#section1 .tv_box .tv {background: url('../images/monitor.png'); width: 100%; height: 100%;  position: absolute; z-index: 1; background-size: 100%; z-index: 2; top: 30px;}
+#section1 .tv_box .tv .screen {width: 370px; height: 350px; position: absolute; top:297px; left: 345px; }
+#section1 .tv_box .tv .screen img {width: 100%;}
+
+#section1 .tv_box .cable {position: absolute; bottom: 20px; left: 65%; z-index: 1;}
+#section1 .mobile {background: url('../images/mobile.png'); width: 278px; height: 520px; position: absolute; z-index: 1; left: 50%; bottom: 10px; margin-left: 350px; }
+#section1 .mobile:before,
+#section1 .mobile:after {content: ""; position: absolute; bottom: -10px; border: 10px solid #000; border-radius: 50%; width: 27px; height: 27px; background: #fa3877; right: -20px;}
+#section1 .mobile:before {left: -20px; background: #00b0ec; width: 40px; height: 40px;}
+
+.robot {position: absolute; left: 50%; transform: translate(-50%, -50%);}
+.robot img {}
+.robot .eye_left,
+.robot .eye_right,
+.robot .mouse {position: absolute;left: 50%;}
+
+
+.robot .eye_left {width: 13px; height: 13px; border-radius: 50%; margin-left: -29px; top: 50px;background: #00f3fe; animation:eye 4s infinite; transition: 0.2s;}
+.robot .eye_right {width: 13px; height: 13px; border-radius: 50%; margin-left: 16px; top: 50px;background: #00f3fe; animation:eye 4s infinite; transition: 0.2s;}
+.robot .mouse {width: 28px; height: 28px; top: 40px; transform: translateX(-50%); border: 1px solid transparent; border-bottom: 5px solid #00f3fe; border-radius: 0%; transition: 0.2s;}
+.robot.smile .mouse {border: 5px solid transparent; border-bottom: 5px solid #00f3fe; border-radius: 50%;}
+
+.robot.on .eye_left{top:60px}
+.robot.on .eye_right{top:60px}
+.robot.on .mouse {top:45px; border: 5px solid transparent;  border-bottom: 5px solid #00f3fe; border-radius: 50%;}
+
+@keyframes eye {
+    0% {transform:scaleY(1)}
+    20% {transform:scaleY(1)}
+    22% {transform:scaleY(0.3)}
+    24% {transform:scaleY(1)}
+
+    70% {transform:scaleY(1)}
+    72% {transform:scaleY(0.3)}
+    74% {transform:scaleY(1)}
+    80% {transform:scaleY(1)}
+    82% {transform:scaleY(0.3)}
+    84% {transform:scaleY(1)}
+
+    100% {transform:scaleY(1)}
+
+}
+
+
+#section1 .mobile ul {display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; height: 100%;}
+#section1 .mobile ul li {width: 210px; height: 40px; background: #000; border-radius: 10px; }
+#section1 .mobile ul li:first-child {background: #926d57; font-style: italic; display: flex; color: #fff; justify-content: center; align-items: center; }
+#section1 .mobile ul li a {display: flex; color: #fff; justify-content: center; align-items: center; height: 100%;}
+#section1 .mobile ul li:hover:not(:first-child) {
+    box-shadow: inset 0 0 20px rgba(48, 150, 176, 1),
+                inset 0 0 20px rgba(48, 150, 176, 1),
+                inset 0 0 20px rgba(48, 150, 176, 1);}
+
+.st0 {fill:none;stroke:#FFFFFF;stroke-width:11;stroke-miterlimit:10;}
+.st1 {fill:none;stroke:#926D57;stroke-width:11;stroke-miterlimit:10;}
+.st2 {fill:none;stroke:#926D57;stroke-width:11;stroke-miterlimit:10;stroke-dasharray:39.3705,39.3705; stroke-dashoffset: .3705; animation: cable 2s infinite linear;}
+@keyframes cable {
+    0% {stroke-dashoffset: 0;}
+    100% {stroke-dashoffset: -78.3705;}
+}
+
+
+
+
+section { padding: 0px 0;}
+/* section2 */
+#section2 {width: 100%; height: 100vh; position: relative; background: #fff url('../images/bg_img1.png') right bottom no-repeat; padding-bottom: 300px; padding-top: 200px;}
+#section2 .title_box {text-align: center; }
+#section2 .title_box .title {display: inline-block; position: relative; } 
+#section2 .title_box .title span {display: block;}
+
+#section2 .title_box .title .robot_box {position: absolute; width: 100%; padding-top: 100%; top: 50px; left: 0; animation: sec2Robot 10s infinite alternate linear;}
+@keyframes sec2Robot {
+    0% {transform: rotate(0);}
+    100% {transform: rotate(90deg);}
+}
+#section2 .title_box .title .robot_box .robot {position: absolute; top: -80px; left: -100px; transform: rotate(-30deg);}
+#section2 .title_box .title .robot_box .robot.eye{position: absolute; top: 50px; left: 50px; width: 10px; height: 10px; background: #000; border-radius: 50%; animation: robotEye 2s infinite alternate;}
+
+#section2 .title_box .title .robot_box .robot .beam1{position: absolute; top: 50px; left: 55px;animation: beam 3s infinite alternate linear; transform-origin: left top;}
+
+@keyframes beam {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(50deg);}
+}
+#section2 .title_box .title .robot_box .robot .beam2{position: absolute; top: 50px; left: 95px;animation: beam 3s infinite alternate linear; transform-origin: left top; animation-delay: 1s;}
+
+#section2 .title_box .subj {font-size: 30px; margin-top: 50px; }
+#section2 .title_box .subj i {color: #4c76ef;}
+
+
+#section2 .content_box {max-width: 1400px; margin:150px auto 0 auto;}
+#section2 .content_box > ul {display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 0 50px;}
+#section2 .content_box > ul > li {width: 30%; box-sizing: border-box; border-left: 1px solid #ccc; position: relative; font-family: 'PyeongChangPeace-Light'; padding-bottom: 50px;}
+#section2 .content_box > ul > li h3 {position: absolute;transform: rotate(-90deg) translateX(-100%); font-size: 40px; left: 0; transform-origin: top left; font-family: 'PyeongChangPeace-Bold';}
+#section2 .content_box > ul > li .content {margin-left: 100px;}
+#section2 .content_box > ul > li .content li {display: flex; gap: 50px; font-size: 20px;}
+#section2 .content_box > ul > li .content li p {padding: 20px 0;}
+#section2 .content_box > ul > li .content li p.tit {flex-basis: 60px; color: #064489; font-weight: bold;}
+
+#section2 .content_box > ul > li .cont2  {display: flex; flex-wrap: wrap; gap: 30px;;}
+#section2 .content_box > ul > li .cont2 li {width: 20%;}
+#section2 .content_box > ul > li .cont2 li p.tit {}
+
+
+
+
+/* section3 */
+#section3 {width: 100%; position: relative; background: #fff; background-attachment: fixed; margin-top: -300px; padding-top: 0; }
+#section3 .section3Bg {width: 90%; position: relative; background: url('../images/bg_section3.jpg')  no-repeat; background-attachment: fixed; margin: 0 auto; padding: 100px 0; box-sizing: border-box;}
+#section3 .title_box {margin-left: 130px; margin-bottom: 120px; }
+#section3 .title_box .title {margin:0 70px;}
+
+#section3 .planet1 {position: absolute; right: -300px; top: -200px;}
+#section3 .planet2 {position: absolute; left: -200px; bottom: -500px; z-index: 2;}
+
+#section3 .content_box {margin-left: 200px;}
+#section3 .content_box ul {display: flex; width: 1000px; flex-wrap: wrap; gap: 60px 120px; margin-top: 80px;}
+#section3 .content_box ul li {width: 380px; height: 100px; border-radius: 80px; background: url('../images/bt_img.jpg'); position: relative; border: 7px solid #fff; align-items: center; display: flex; align-items: center;}
+#section3 .content_box ul li a {display: block; height: 100%; width: 100%; box-sizing: border-box; padding-left: 30px;}
+#section3 .content_box ul li p {color: #fff; font-size: 30px; font-family: 'PyeongChangPeace-Light'; padding-left: 20px; height: 100%; display: flex; align-items: center;}
+#section3 .content_box ul li .robot_hole {width: 60px; height: 60px; position: absolute; background: #545b78; border-radius: 50%;  right: 20px; top: 10px;}
+#section3 .content_box ul li .robot_hole .robot {position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); transition: 0.4s; transform-origin: left; }
+
+#section3 .content_box ul li:hover .robot_hole .robot {animation:robotHover 0.1s ; }
+@keyframes robotHover {
+    0% {transform: rotateY(0) translateX(-50%);}
+    50% {transform: rotateY(50deg) translateX(-50%);}
+    100% {transform: rotateY(0deg) translateX(-50%);}
+}
+
+
+/* section4 */
+#section4 {width: 100%; position: relative; background: #fff; padding-top: 500px;}
+#section4 .title_box {margin-bottom: 50px;}
+#section4 .content_box > ul > li {padding: 130px 0; position: relative; perspective: 2000px; }
+#section4 .content_box > ul > li:nth-child(1) {background: #f5fafa;}
+#section4 .content_box > ul > li:nth-child(2) {background: #ffffff;}
+#section4 .content_box > ul > li:nth-child(3) {background: #fff8e9;}
+#section4 .content_box > ul > li:nth-child(4) {background: #faf9f9;}
+#section4 .content_box > ul > li:nth-child(5) {background: #ebecf1;}
+#section4 .content_box > ul > li:nth-child(6) {background: #fcf5eb;}
+#section4 .content_box > ul > li:nth-child(7) {background: #f5f4f3;}
+
+
+#section4 .centerbox1500 {display: flex; justify-content: space-between; }
+#section4 .site_info {width: 400px;}
+#section4 .site_info li.number {color: #fff; font-family: 'PyeongChangPeace-Light'; text-align: center; margin-bottom: 20px;}
+#section4 .site_info li.number span {background: #31754e; font-size: 36px; padding:4px 10px; font-family: 'PyeongChangPeace-Light'; }
+#section4 .site_info li.tit {font-family: 'PyeongChangPeace-Light'; font-size: 70px; letter-spacing: 0.3em; text-align: center; }
+#section4 .site_info li.text {padding: 20px 0; font-size: 20px; line-height: 1.4; color: #555; margin-bottom: 30px;}
+#section4 .site_info li.point {font-family: 'PyeongChangPeace-Light'; border-radius: 10px; background: #fff; display: flex; justify-content: center; align-items: center; padding: 10px; font-size: 28px; border: 1px solid #bbb;}
+#section4 .site_info li.last {font-size: 20px;}
+#section4 .site_info li.last p {display: flex; gap: 40px;}
+#section4 .site_info li.last p .tit {width: 130px;}
+#section4 .site_info li.last p .per {color: #777}
+
+#section4 .monitors {position: relative; transform-style: preserve-3d; perspective: 2000px; width: 961px; height: 689px; background: url('../images/mockup_tablet.png'); }
+/* #section4 .monitors img {position: relative; z-index: 1;} */
+#section4 .monitors .pc {position: absolute; width: 631px; height: 410px; background: red; top: 21px; left: 190px; transform: rotateY(-37deg) skewY(7deg) skewX(-15deg); z-index: 2; transform-origin: left bottom; overflow: hidden;}
+#section4 .monitors .pc img {width: 100%; transition: 5s; position: absolute; top: 0;}
+#section4 .monitors a.html_view {position: absolute; background: #000; color: #fff; font-size: 20px; padding: 20px 60px; bottom: 0; border-radius:  50px; left: 50px; box-shadow: 20px 20px 40px rgba(0,0,0,0.2); border: 2px solid #fff;}
+#section4 .tablet {position: absolute; width: 390px; height: 280px; top: 400px; right: 190px; z-index: 30; perspective: 2000px; }
+#section4 .tablet .screen {position: absolute; width: 380px; height: 270px; background: #1c1c1c; top: 5px; right: 5px; transform: rotateY(-30deg) skewY(7deg) skewX(-15deg); transform-origin: left;}
+#section4 .tablet .screen .scr {position: absolute; width: 360px; height: 250px; background: #fff; top: 10px; right: 10px; transform-origin: left; overflow: hidden; }
+#section4 .tablet .screen .scr img {width: 100%; position: absolute; transition: 3s;}
+
+
+#section4 li:nth-child(2) li.number span {background: #000;}
+#section4 li:nth-child(3) li.number span {background: #01244a;}
+#section4 li:nth-child(4) li.number span {background: #2a5053;}
+#section4 li:nth-child(5) li.number span {background: #b92023;}
+#section4 li:nth-child(6) li.number span {background: #d6b884;}
+
+#section4 li:nth-child(1) .monitors a.html_view {background: #31754e;}
+#section4 li:nth-child(2) .monitors a.html_view {background: #000;}
+#section4 li:nth-child(3) .monitors a.html_view {background: #01244a;}
+#section4 li:nth-child(4) .monitors a.html_view {background: #2a5053;}
+#section4 li:nth-child(5) .monitors a.html_view {background: #b92023;}
+#section4 li:nth-child(6) .monitors a.html_view {background: #d6b884;}
+
+
+/* section5 */
+#section5 {width: 100%; position: relative; background: #fff; padding-top: 300px;}
+#section5 .title_box {margin-bottom: 50px;}
+
+#section5 .content_box > ul > li {padding: 130px 0; position: relative; perspective: 2000px; }
+#section5 .content_box > ul > li:nth-child(1) {background: #FDF5FF;}
+#section5 .content_box > ul > li:nth-child(2) {background: #fff;}
+#section5 .content_box > ul > li:nth-child(3) {background: #F4F3F3;}
+#section5 .content_box > ul > li:nth-child(4) {background: #FFF2F1;}
+
+
+#section5 .centerbox1500 {display: flex; justify-content: space-between; gap:100px }
+#section5 .site_info {width: 400px;}
+#section5 .site_info li.number {color: #fff; font-family: 'PyeongChangPeace-Light'; text-align: center; margin-bottom: 20px;}
+#section5 .site_info li.number span {background: #31754e; font-size: 36px; padding:4px 10px; font-family: 'PyeongChangPeace-Light'; }
+#section5 .site_info li.tit {font-family: 'PyeongChangPeace-Light'; font-size: 70px; letter-spacing: 0.3em; text-align: center; }
+#section5 .site_info li.text {padding: 20px 0; font-size: 20px; line-height: 1.4; color: #555; margin-bottom: 30px;}
+#section5 .site_info li.point {font-family: 'PyeongChangPeace-Light'; border-radius: 10px; background: #fff; display: flex; justify-content: center; align-items: center; padding: 10px; font-size: 28px; border: 1px solid #bbb;}
+#section5 .site_info li.last {font-size: 20px;}
+#section5 .site_info li.last p {display: flex; gap: 40px;}
+#section5 .site_info li.last p .tit {width: 130px;}
+#section5 .site_info li.last p .per {color: #777}
+
+#section5 .monitors {position: relative; transform-style: preserve-3d; perspective: 2000px; }
+/* #section5 .monitors img {position: relative; z-index: 1;} */
+#section5 .monitors .pc {position: absolute; width: 631px; height: 410px; background: red; top: 21px; left: 190px; transform: rotateY(-37deg) skewY(7deg) skewX(-15deg); z-index: 2; transform-origin: left bottom; overflow: hidden;}
+#section5 .monitors .pc img {width: 100%; transition: 5s; position: absolute; top: 0;}
+#section5 .monitors a.html_view {position: absolute; background: #000; color: #fff; font-size: 20px; padding: 20px 60px; bottom: 0; border-radius:  50px; left: 50px; box-shadow: 20px 20px 40px rgba(0,0,0,0.2); border: 2px solid #fff; }
+#section5 .tablet {position: absolute; width: 390px; height: 280px; top: 400px; right: 190px; z-index: 30; perspective: 2000px; }
+#section5 .tablet .screen {position: absolute; width: 380px; height: 270px; background: #1c1c1c; top: 5px; right: 5px; transform: rotateY(-30deg) skewY(7deg) skewX(-15deg); transform-origin: left;}
+#section5 .tablet .screen .scr {position: absolute; width: 360px; height: 250px; background: #fff; top: 10px; right: 10px; transform-origin: left; overflow: hidden; }
+#section5 .tablet .screen .scr img {width: 100%; position: absolute; transition: 3s;}
+
+
+#section5 li:nth-child(1) li.number span {background: #512771;}
+#section5 li:nth-child(2) li.number span {background: #3E5D58;}
+#section5 li:nth-child(3) li.number span {background: #53B582;}
+#section5 li:nth-child(4) li.number span {background: #522671;}
+
+#section5 li:nth-child(1) .monitors a.html_view {background: #512771;}
+#section5 li:nth-child(2) .monitors a.html_view {background: #3E5D58;}
+#section5 li:nth-child(3) .monitors a.html_view {background: #53B582;}
+#section5 li:nth-child(4) .monitors a.html_view {background: #522671;}
+
+
+
+
+/* section6 */
+#section6 {width: 100%; position: relative; background: #fff url('../images/'); background: #fff url('../images/bg_img2.png') left top no-repeat; padding-top: 200px;}
+#section6 .content_box {width: 1500px; margin: 0 auto; margin-top: 100px;}
+#section6 .content_box ul {display: flex; flex-wrap: wrap; justify-content: center; gap: 50px; }
+#section6 .content_box ul li {width: 40%; flex-grow: 1; text-align: center;}
+#section6 .content_box ul li:nth-child(9) {width: 100%;}
+#section6 .content_box ul li:nth-child(10) {width: 100%;}
+
+
+
+
+/* section7 */
+#section7 {width: 100%; position: relative; background: #fff url('../images/'); background: #fff url('../images/bg_img2.png') left top no-repeat; padding: 200px 0;}
+#section7 .content_box {width: 1500px; margin: 0 auto; margin-top: 100px;}
+#section7 .content_box ul {display: flex; flex-wrap: wrap; justify-content: center; gap: 50px; }
+#section7 .content_box ul li {width: 30%; flex-grow: 1;}
+
+
+
+
+/* section8 */
+#section8 {width: 100%; position: relative; background: #fff url('../images/'); background: #fff url('../images/bg_img2.png') left top no-repeat; padding: 200px 0}
+#section8 .content_box {width: 1500px; margin: 0 auto; margin-top: 100px;}
+#section8 .content_box ul {display: flex; flex-wrap: wrap; justify-content: center; gap: 50px; }
+#section8 .content_box ul li {width: 22%; flex-grow: 1;}
+#section8 .content_box ul li img {width: 100%;}
+
+
+
+#section9 {width: 100%; height: 100vh; position: relative; color: #fff; }
+#section9 .centerbox1500 {height: 100%;}
+#section9 .title_box {display: flex; justify-content: center; align-items: center; color: #fff; font-size: 100px; height: 100%;}
